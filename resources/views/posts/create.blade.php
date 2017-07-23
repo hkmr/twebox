@@ -15,22 +15,6 @@
 
 @section('content')
 
-	<section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-                            <h1 class="title">Write New Story</h1>
-                            <p>Be Creative</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#action-->
-
 	<section id="portfolio-information" class="padding-top padding-bottom">
         <div class="container">
             <div class="row">

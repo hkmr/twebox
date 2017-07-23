@@ -4,6 +4,8 @@
 <script type="text/javascript" src="/js/wow.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script> 
 <script type="text/javascript" src="/js/page-loader-min.js"></script> 
+<script type="text/javascript" src="/js/notify.js"></script> 
+
 
 <!-- javascript plugin for responsive grid layout -->
     <script src="/js/masonry.pkgd.min.js"></script>
@@ -46,5 +48,7 @@ $("#login-box-link").click(function(){
   $("#login-box-link").addClass("active");
   $("#signup-box-link").removeClass("active");
 });
+
+
 
 </script>

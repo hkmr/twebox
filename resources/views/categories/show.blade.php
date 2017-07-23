@@ -6,22 +6,6 @@
 
 @section('content')
 
-	<section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-							<h1 class="title">{{ $name->name }} Blogs :</h1>
-                            <p>All blogs with tags {{ $name->name }} </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#page-breadcrumb-->
-
 	<section id="blog" class="padding-top">
         <div class="container">
             <div class="row">

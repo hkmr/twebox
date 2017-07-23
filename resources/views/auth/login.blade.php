@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 
-              <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+              <!-- <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -66,6 +66,104 @@
             </div>
         </div>
     </section>
-    <!--/#login-->
+ -->
 
+
+            <div class="login-box">
+                <div class="lb-header">
+                  <a href="#" class="active" id="login-box-link">Login</a>
+                  <a href="#" id="signup-box-link">Sign Up</a>
+                </div>
+                <p class="header-text">Login with</p>
+                <div class="social-login">
+                  <a href="/auth/facebook/" class="facebook">
+                    <i class="fa fa-facebook-official fa-2x"></i>
+                    <p>Facebook</p>
+                  </a>
+                  <a href="/auth/twitter/" class="twitter">
+                    <i class="fa fa-twitter fa-2x"></i>
+                    <p>Twitter</p>
+                  </a>
+                  <a href="/auth/google/" class="google">
+                    <i class="fa fa-google-plus fa-lg"></i>
+                    <p>Google</p>
+                  </a>
+                </div>
+                <!-- login form -->
+                <form class="email-login form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                {{ csrf_field() }}
+                  <div class="u-form-group form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input id="email" type="email"  placeholder="Email" name="email" value="{{ old('email') }}" required autofocus/>
+                     @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                  <div class="u-form-group form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input id="password" type="password"  name="password" placeholder="Password" required/>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                  <div class="checkbox u-form-group ">
+                    <label>
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                    </label>
+                  </div>
+                  <div class="u-form-group">
+                    <button type="submit">Log in</button>
+                  </div>
+                  <div class="u-form-group">
+                    <a href="{{ route('password.request') }}" class="forgot-password">Forgot password?</a>
+                  </div>
+                </form>
+
+                <!-- signup form -->
+                <form class="email-signup" role="form" method="POST" action="{{ route('register') }}">
+                {{ csrf_field() }}
+                  <div class="u-form-group form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <input id="name" type="text"  placeholder="Name" name="name" value="{{ old('name') }}" required/>
+
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+
+                  <div class="u-form-group form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input id="email" type="email"  placeholder="Email" name="email" value="{{ old('email') }}" required/>
+
+                     @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+
+                  <div class="u-form-group form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input id="password" type="password"  placeholder="Enter password" name="password" required/>
+
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                  <div class="u-form-group">
+                    <input id="password-confirm" type="password" placeholder="Re-enter password" name="password_confirmation" required/>
+                  </div>
+                  <div class="u-form-group">
+                    <button type="submit">Sign Up</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+        </div>
+    </section>
+    <!--/#login-->
 @endsection

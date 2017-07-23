@@ -1,4 +1,4 @@
-<header id="header" onload="javascript:introJs().start();" >      
+<header id="header" >      
       <div class="container">
           <div class="row">
               <div class="col-sm-12 overflow">
@@ -77,6 +77,7 @@
           </div>
       </div>
   </header>
+  <hr>
   <!--/#header -->
 
   <div id="mySidenav" class="sidenav">

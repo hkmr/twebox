@@ -97,7 +97,7 @@ class PostController extends Controller
 
         $post->tags()->sync($request->tags,false);
 
-        Session::flash('success' , 'The blog post has been Successfully saved!');
+        Session::flash('success' , 'Your is published !');
 
         //after submiting redirect to show
 

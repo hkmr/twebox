@@ -6,34 +6,17 @@
 
 @section('content')
 
-	<section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-                            <h1 class="title">All Blogs</h1>
-                            <p>Explore all the blogs and like them </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#action-->
-
 	  <section id="blog" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-7">
                     <div class="row">
                     	@foreach ($posts as $post)
-                         <div class="col-md-5 col-sm-12 blog-padding-right blog-box">
+                         <div class="col-md-8 col-sm-12 blog-padding-right blog-box">
                             <div class="single-blog two-column">
                                 <div class="post-thumb">
                                     <a href="{{ route('blog.single', $post->slug) }} ">
                                     @if($post->image == null)
-									<img src=" {{ asset('images/blog/blog-default.jpg') }} " alt="default-image" class="img-responsive" />
 
 									@else
 
@@ -52,9 +35,9 @@
                                     <a href="{{ route('blog.single', $post->slug) }} " class="read-more">View More</a>
                                     <div class="post-bottom overflow">
                                         <ul class="nav nav-justified post-nav">
-                                            <li><a href="{{'categories/'.$post->category->id }}"><i class="fa fa-tag"></i>{{ $post->category->name }}</a></li>
-                                            <li><a href="{{ route('blog.single', $post->slug) }}"><i class="fa fa-eye"></i>{{ $post->views }} Views</a></li>
-                                            <li><a href="{{ route('blog.single', $post->slug.'#comments') }}"><i class="fa fa-comments"></i>{{ $post->comments()->count() }} Comments</a></li>
+                                            <li><a href="{{'categories/'.$post->category->id }}"><i class="fa fa-tag fa-2x"></i>{{ $post->category->name }}</a></li>
+                                            <li><a href="{{ route('blog.single', $post->slug) }}"><i class="fa fa-eye fa-2x"></i>{{ $post->views }} Views</a></li>
+                                            <li><a href="{{ route('blog.single', $post->slug.'#comments') }}"><i class="fa fa-comment-o fa-2x"></i>{{ $post->comments()->count() }} Comments</a></li>
                                         </ul>
                                     </div>
                                 </div>

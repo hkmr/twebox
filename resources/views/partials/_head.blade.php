@@ -11,6 +11,7 @@
 <link href="/css/main.css" rel="stylesheet">
 <link href="/css/responsive.css" rel="stylesheet">
 <link href="/css/styles.css" rel="stylesheet">
+<link href="/css/notify.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono|Titillium+Web|Marvel|Economica" rel="stylesheet">
 
 <!-- facebook meta tags -->

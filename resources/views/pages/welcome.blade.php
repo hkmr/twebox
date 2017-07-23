@@ -30,12 +30,11 @@
                     <div class="row grid">
                 
                         @foreach($posts as $post)
-                         <div class="col-md-5 col-sm-12 blog-padding-right blog-box grid-item">
+                         <div class="col-md-9 col-sm-12 blog-padding-right blog-box grid-item">
                             <div class="single-blog two-column">
                                 <div class="post-thumb">
                                     <a href="{{ route('blog.single', $post->slug) }}">
                                     @if($post->image == null)
-                                    <!-- <img src=" {{ asset('images/blog/blog-default.jpg') }} " class="img-responsive" alt="default-image" height="270" width="480" /> -->
 
                                     @else
                                     <img src="{{asset('/images/blog/' . $post->image)}}" class="img-responsive" alt="{{$post->title}}">
@@ -52,9 +51,9 @@
                                     <a href="{{ route('blog.single', $post->slug) }}" class="read-more">View More</a>
                                     <div class="post-bottom overflow">
                                         <ul class="nav nav-justified post-nav">
-                                            <li><a href="{{'/categories/'.$post->category->id }}"><i class="fa fa-tag"></i>{{ $post->category->name }}</a></li>
-                                            <li><a href="{{ route('blog.single', $post->slug) }}"><i class="fa fa-eye"></i>{{ $post->views }} Views</a></li>
-                                            <li><a href="{{ route('blog.single', $post->slug.'#comments') }}"><i class="fa fa-comments"></i>{{ $post->comments()->count() }} Comments</a></li>
+                                            <li><a href="{{'/categories/'.$post->category->id }}"><i class="fa fa-tag fa-2x"></i>{{ $post->category->name }}</a></li>
+                                            <li><a href="{{ route('blog.single', $post->slug) }}"><i class="fa fa-eye fa-2x"></i>{{ $post->views }} Views</a></li>
+                                            <li><a href="{{ route('blog.single', $post->slug.'#comments') }}"><i class="fa fa-comment-o fa-2x"></i>{{ $post->comments()->count() }} Comments</a></li>
                                         </ul>
                                     </div>
                                 </div>

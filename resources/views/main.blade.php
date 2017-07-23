@@ -15,7 +15,6 @@
 
     @include('partials._navBar')
 
-    @include('partials._messages')
 
     @yield('content')
 
@@ -25,6 +24,7 @@
 
     @yield('scripts')
 
+    @include('partials._messages')
 
   </body>
 

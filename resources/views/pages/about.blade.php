@@ -6,22 +6,7 @@
 @section('description', 'about tweBox')
 
 @section('content')
- 
-  <section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-                            <h1 class="title">About Us</h1>
-                            <p>Who are we. ?</p>
-                        </div>
-                     </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#page-breadcrumb-->
+
 
     <section id="about-company" class="padding-top wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
         <div class="container">
