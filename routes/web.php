@@ -40,8 +40,8 @@ Auth::routes();
 // Route::get('/logout', 'Auth\LoginController@logout');
 
 // socialite - social login route
-Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
+Route::get('/auth/{provider}', 'Auth\RegisterController@redirectToProvider');
+Route::get('/auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
 
 //category route
 Route::resource('categories', 'CategoryController', ['except' => ['create']]);
@@ -53,7 +53,7 @@ Route::resource('subscribe', 'SubscribeController');
 Route::resource('feedback', 'FeedbackController');
 
 //tags route
-Route::resource('tags', 'TagController', ['except' => ['create']]);
+// Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 // comments
 Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);

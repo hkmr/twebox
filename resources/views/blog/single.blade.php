@@ -51,9 +51,12 @@
                                 </div>
                                 <div class="post-content overflow">
                                     <h2 class="post-title bold"><a href="{{ route('blog.single', $post->slug) }}"> {{ $post->title }} </a></h2>
+                                    <p>Read time: <span class="eta"></span></p>
                                     <h3 class="post-author"><a href="{{ '/profile/'. $post->user_id }}">Posted by {{ $user->where('id',$post->user_id)->pluck('name')->first() }}</a></h3>
                                     <div class="post-body">
-                                    <p >{!! $post->body !!}</p>
+                                    <article>
+                                        <p>{!! $post->body !!}</p>
+                                    </article>
                                     </div>
                                     <div class="post-bottom overflow">
                                         <ul class="nav navbar-nav post-nav">
@@ -64,9 +67,7 @@
                                         <ul class="nav navbar-nav post-nav">
                                             
                                                 <li>
-                                                @foreach( $post->tags as $tag)
-                                                    <span class="label label-default">{{$tag->name}}</span>
-                                                @endforeach
+                                                <span id="tags-container"></span>
                                                 </li>
                                                 <li>
                                                     <span class='st_facebook_hcount'></span>

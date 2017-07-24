@@ -48,6 +48,22 @@
   letter-spacing: -.004em;
 }
 
+.stickyfooter {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  box-shadow: 0px -3px 10px #888888;
+  z-index: 50;
+  background-color: #ffffff;
+  text-align: center;
+}
+.stickyfooter p{
+  padding-bottom: 0px; 
+  margin-bottom: 0px;
+}
+
 .comment-content{
 	clear: both;
 	margin-left: 65px;
@@ -557,6 +573,9 @@
 }
 
 @media only screen and (max-width : 1012px) {
+     #mySidenav button {
+          display: none;
+      }
 
     .lb-header{
       position:relative;
@@ -647,6 +666,10 @@
 }
 
 @media only screen and (max-width : 512px) {
+
+      #mySidenav button {
+          display: none;
+      }
 
     .lb-header{
       position:relative;

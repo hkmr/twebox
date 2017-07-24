@@ -7,7 +7,7 @@
 @section('stylesheets')
 
 	{!! Html::style('css/parsley.css') !!}
-	{!! Html::style('css/select2.min.css') !!}
+	<!-- {!! Html::style('css/select2.min.css') !!} -->
 
 	 
 
@@ -39,7 +39,7 @@
 					</select>
 					</div>
 
-					<div class="form-group">
+					<!-- <div class="form-group">
 					{{ Form::label('tags', 'Story Tags:') }}
 					<select class="form-control select2-multi" name='tags[]' multiple="multiple">
 
@@ -48,7 +48,7 @@
 					@endforeach
 						
 					</select>
-					</div>
+					</div> -->
 
 					{{ Form::label('featured_image','Upload Story cover Image') }}
 					{{ Form::file('featured_image') }}
@@ -71,11 +71,11 @@
 @section('scripts')
 
 	{!! Html::script('js/parsley.min.js') !!}
-	{!! Html::script('js/select2.min.js') !!}
+	<!-- {!! Html::script('js/select2.min.js') !!} -->
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(".select2-multi").select2({placeholder: "Select Your Tags."});
-	</script>
+	</script> -->
 
 	<script src='/js/tinymce/tinymce.min.js'></script>
 

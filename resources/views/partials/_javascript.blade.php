@@ -5,6 +5,8 @@
 <script type="text/javascript" src="/js/main.js"></script> 
 <script type="text/javascript" src="/js/page-loader-min.js"></script> 
 <script type="text/javascript" src="/js/notify.js"></script> 
+<script type="text/javascript" src="/js/readingTime.js"></script> 
+<script type="text/javascript" src="/js/tag-extract.min.js"></script> 
 
 
 <!-- javascript plugin for responsive grid layout -->
@@ -48,6 +50,18 @@ $("#login-box-link").click(function(){
   $("#login-box-link").addClass("active");
   $("#signup-box-link").removeClass("active");
 });
+
+// reading time initialize
+$('article').readingTime();
+
+// auto tagging initialize
+$('article').tagExtract({
+  max: 4,
+  min: 2,
+  target: 'tags-container',
+  clusters: ['label-primary', 'label-info', 'label-warning', 'label-danger']
+});
+
 
 
 

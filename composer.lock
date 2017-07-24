@@ -650,16 +650,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v3.0.6",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "bca777a8526983e0ebdf3350f1b6e031923a473b"
+                "reference": "d79174513dbf14359b53e44394cf71373ae03433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/bca777a8526983e0ebdf3350f1b6e031923a473b",
-                "reference": "bca777a8526983e0ebdf3350f1b6e031923a473b",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/d79174513dbf14359b53e44394cf71373ae03433",
+                "reference": "d79174513dbf14359b53e44394cf71373ae03433",
                 "shasum": ""
             },
             "require": {
@@ -678,6 +678,14 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Socialite\\SocialiteServiceProvider"
+                    ],
+                    "aliases": {
+                        "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
+                    }
                 }
             },
             "autoload": {
@@ -700,7 +708,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2017-05-05T14:17:11+00:00"
+            "time": "2017-07-22T14:44:37+00:00"
         },
         {
             "name": "laravel/tinker",

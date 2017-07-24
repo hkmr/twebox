@@ -235,7 +235,7 @@ return [
         'Html'   => Collective\Html\HtmlFacade::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        //'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
