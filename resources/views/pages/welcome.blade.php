@@ -13,7 +13,7 @@
                     <div class="action">
                         <div class="col-sm-12">
                             <h1 class="title">Twebox</h1>
-                            <p class="pageInfo">A place where every one has some stories to share</p>
+                            <p class="pageInfo"><span class="type-it">WELCOME TO TWEBOX.COM <br>DISCOVER NEW STORIES AND SHARE TO WORLD.</span></p>
                         </div>
                     </div>
                 </div>

@@ -36,7 +36,7 @@
     </section><hr>
     <!--/#services-->
 
-    <section class="services">
+    <section class="services" id="advertise">
       <div class="container padding-bottom">
         <h2 class="head">Avertise with us</h2>
           <p>For all advertising inquiries, please contact:</p>

@@ -12,7 +12,8 @@
 <link href="/css/responsive.css" rel="stylesheet">
 <link href="/css/styles.css" rel="stylesheet">
 <link href="/css/notify.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono|Titillium+Web|Marvel|Economica" rel="stylesheet">
+<link href="/css/paradeiser.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono|Titillium+Web|Marvel|Economica|Josefin+Sans" rel="stylesheet">
 
 <!-- facebook meta tags -->
   <meta property="og:url"           content="@yield('og-url') " />

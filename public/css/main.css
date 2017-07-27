@@ -229,6 +229,10 @@
   color:#A22523;
 }
 
+.social-icons ul li a:hover .fa-instagram {
+  color:#f46542;
+}
+
 .social-icons ul li a:hover .fa-dribbble {
   color:#E94989;
 }
@@ -690,7 +694,7 @@ ul.sub-menu {
 }
 
 .title {
-  color: #404040;
+  color: #FFFFFF;
   font-weight: 300;
 }
 
@@ -742,11 +746,12 @@ ul.sub-menu {
 }
 
 #page-breadcrumb {
-  background-image: url(../images/home/tour-bg.png);
+  background-image: url(../images/home/shattered-island.gif);
   background-color: #fbfafa;
   background-repeat: repeat-x;
-  height: 130px;
+  height: 180px;
   background-position: center;
+  opacity: 0.8;
   display: table;
   position: static;
   width: 100%;
