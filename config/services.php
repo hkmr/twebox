@@ -37,20 +37,20 @@ return [
     
     // socialite providers...
     'facebook' => [
-        'client_id' => '679079478945205',
-        'client_secret' => '0716246e5bac0ea0a0f19a747dd3c239',
+        'client_id' => 'facebook_client_id',
+        'client_secret' => 'facebook_client_password',
         'redirect' => 'http://localhost:8000/auth/facebook/callback',
     ],
 
     'twitter' => [
-        'client_id' => 'J9DYZIPpfFhs0aMmuPdvB8RAB',
-        'client_secret' => 'm0eiMJH1Y4qkpRCKXpa1i2fZZruyirpKdnjTbc2Pmnc5X9GRkM',
+        'client_id' => 'twitter_client_id',
+        'client_secret' => 'twitter_client_password',
         'redirect' => 'http://localhost:8000/auth/twitter/callback',
     ],
 
     'google' => [
-        'client_id' => '631544920182-jle68bd250stgqsrudjprb0liprketvg.apps.googleusercontent.com',
-        'client_secret' => 'YfxsVreXlHr3HSHYJIYdI4mq',
+        'client_id' => 'google_client_id',
+        'client_secret' => 'google_client_password',
         'redirect' => 'http://localhost:8000/auth/google/callback',
     ],
 
