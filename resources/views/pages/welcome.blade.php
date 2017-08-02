@@ -22,14 +22,14 @@
    </section>
     <!--/#action-->
 
-    <section id="blog" class="padding-top">
+    <section id="blog" >
         <div class="container">
             <div class="row">
-                <div class="col-md-9 col-sm-7">
-                    <p class="title head">Recent Stories</p>
+                <p class="title head">Recent Stories</p>
+                    <div class="col-md-9 col-sm-7">
+                    <div class="infinite-scroll">
                     <div class="row grid">
-                
-                        @foreach($posts as $post)
+                         @foreach($posts as $post)
                          <div class="col-md-9 col-sm-12 blog-padding-right blog-box grid-item">
                             <div class="single-blog two-column">
                                 <div class="post-thumb">
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="{{ route('blog.single', $post->slug) }}">{{$post->title}}</a></h2>
+                                    <p class="post-title bold"><a href="{{ route('blog.single', $post->slug) }}">{{$post->title}}</a></p>
                                     <h3 class="post-author"><a href=" {{ '/profile/'. $post->user_id }} ">Posted by {{ $user->where('id',$post->user_id)->pluck('name')->first() }}</a></h3>
                                     <p>{{ substr(strip_tags($post->body), 0 ,250) }} {{ strlen(strip_tags($post->body)) >250 ? '...' : '' }}</p>
                                     <a href="{{ route('blog.single', $post->slug) }}" class="read-more">View More</a>
@@ -61,10 +61,10 @@
                         </div>
 
                         @endforeach
-                         
+                            {!! $posts->links() !!}
+
                     </div>
-                    <div class="blog-pagination">
-                        {!! $posts->links(); !!}
+                      
                     </div>
                  </div>
                 <!--/#blog-->
@@ -94,11 +94,16 @@
                         </div>
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
-                            <ul class="nav navbar-stacked">
+                            {{-- <ul class="nav navbar-stacked">
                               @foreach( $categories as $category)
                                 <li><a href="{{'categories/'. $category->id }}">{{ $category->name }}<span class="pull-right">{{ $posts->where('category_id', $category->id)->count() }}</span></a></li>
                               @endforeach
-                            </ul>
+                            </ul> --}}
+                            @foreach( $categories as $category)
+                                <form method="get" action="{{'categories/'. $category->id }}" style="display: inline; margin-bottom: 10px;">
+                                    <button class="ui mini blue basic button" type="submit">{{ $category->name }}</button>
+                                </form>
+                            @endforeach
                         </div>
 
                         <!-- advertisment -->

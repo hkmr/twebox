@@ -1,5 +1,6 @@
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/semantic.min.js"></script>
 <script type="text/javascript" src="/js/lightbox.min.js"></script>
 <script type="text/javascript" src="/js/wow.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script> 
@@ -8,6 +9,8 @@
 <script type="text/javascript" src="/js/readingTime.js"></script> 
 <script type="text/javascript" src="/js/tag-extract.min.js"></script> 
 <script type="text/javascript" src="/js/paradeiser.min.js"></script> 
+<script type="text/javascript" src="/js/flowtype.js"></script> 
+<script type="text/javascript" src="/js/jquery.jscroll.js"></script> 
 
 <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
 
@@ -63,8 +66,45 @@ $("#login-box-link").click(function(){
 // reading time initialize
 $('article').readingTime();
 
+/*
+############################################
+*/
+
+// semantic dropdown initialization
+
+$('.ui.dropdown')
+  .dropdown();
+
 /* ###########################################
  */
+
+// text size manager jquery script 
+ $('article').flowtype({
+   minimum : 500,
+   maximum : 1200,
+   fontRatio: 40
+});
+
+/*
+###############################################
+*/
+
+$('ul.pagination').hide();
+    $(function() {
+        $('.infinite-scroll').jscroll({
+            autoTrigger: true,
+            loadingHtml: '<center><img src="/images/loading.gif" alt="Loading..." /></center>',
+            padding: 0,
+            nextSelector: '.pagination li.active + li a',
+            contentSelector: 'div.infinite-scroll',
+            callback: function() {
+                $('ul.pagination').remove();
+            }
+        });
+    });
+/*
+##############################################
+*/
 
 // auto tagging initialize
 $('article').tagExtract({
@@ -82,6 +122,7 @@ $('.type-it').typeIt({
   breakLines:false,
   loop:true,
 });
+
 
 /* ###########################################
  */
@@ -101,7 +142,7 @@ $('.type-it').typeIt({
 
 </script>
 
-// enabling headroom
+{{-- enabling headroom --}}
 
 @if (Auth::check() )
           <script type="text/javascript">

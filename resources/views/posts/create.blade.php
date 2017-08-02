@@ -4,14 +4,6 @@
 
 @section('description', 'create new post in tweBox')
 
-@section('stylesheets')
-
-	{!! Html::style('css/parsley.css') !!}
-	<!-- {!! Html::style('css/select2.min.css') !!} -->
-
-	 
-
-@endsection
 
 @section('content')
 
@@ -69,9 +61,6 @@
 @endsection
 
 @section('scripts')
-
-	{!! Html::script('js/parsley.min.js') !!}
-	<!-- {!! Html::script('js/select2.min.js') !!} -->
 
 	<!-- <script type="text/javascript">
 		$(".select2-multi").select2({placeholder: "Select Your Tags."});

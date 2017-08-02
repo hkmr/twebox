@@ -8,9 +8,15 @@
 	  <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 col-md-offset-1" style="border-right:2px solid #e3e3e3; ">
-                    <img src="{{ preg_match('/https/', $user->avatar)  ? $user->avatar : asset('images/user-profile/'. $user->avatar ) }}" class="img-responsive " height="500px" width="500px" alt="{{$user->name}}">
-
+                <div class="col-sm-3 col-md-offset-1" >
+                    <div class="ui centered card">
+                      <div class="image">
+                        <img src="{{ preg_match('/https/', $user->avatar)  ? $user->avatar : asset('images/user-profile/'. $user->avatar ) }}" alt="{{$user->name}}">
+                      </div>
+                      <div class="content">
+                        <a class="header">{{ $user->name }}</a>
+                      </div>
+                    </div>
                         <h2>{!! $user->info !!}</h2>
                         <p>
 
@@ -23,27 +29,17 @@
 
                         </p>
                 </div>
+                <h4 class="ui vertical divider header">
+                </h4>
                 <div class="col-sm-6 col-md-offset-2">
                     <div class="project-name overflow">
-                        <h1 class="bold">{{ $user->name }}</h1>
-                        <!-- <ul class="nav navbar-nav navbar-default">
-                            <li><i class="fa fa-tag"></i>{{ $user->email }}</li>
-                        </ul> -->
                         <h2 class="bold"><i class="fa fa-envelope"></i> {{ $user->email }}</h2>
                     </div><br>
                     <div class="project-name overflow">
-                        <!-- <ul class="nav navbar-nav navbar-default">
-                            <li><b>Posts:</b> {{ $posts->total() }} </li><br>
-                            <li><b>Total views:</b> {{$total_view}} </li><br>
-                            <li><b>Editor In:</b> @foreach($categories as $category)
-                            <i><a href="#">{{$category}} /</a></i>
-                            @endforeach
-                             </li>
-                        </ul> -->
-                        <h2 class="blod"><b>Posts:</b> {{ $posts->total() }} </h2>
+                        <h2 class="blod"><b>Stories Published:</b> {{ $posts->total() }} </h2>
                         <h2 class="blod"><b>Total views:</b> {{$total_view}} </h2>
-                        <h2 class="blod"><b>Joined Since:</b> {{$user->created_at}} </h2>
-                        <h2 class="blod"><b>Social on:</b> 
+                        <h2 class="blod"><b>Joined from:</b> {{$user->created_at}} </h2>
+                        <h2 class="blod"><b>Follow Me:</b> 
                         @if($user->facebook !=null )
                         <a href="{{$user->facebook}}" title="FACEBOOK"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> 
                         @endif

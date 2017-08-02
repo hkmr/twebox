@@ -13,7 +13,7 @@ class PagesController extends Controller {
 
 	public function getIndex(){
 		$posts = Post::orderBy('created_at','desc')->limit(5)->paginate(10);
-		$categories = Category::orderBy('created_at','desc')->take(4)->get();
+		$categories = Category::orderBy('created_at','desc')->take(20)->get();
 		$populars =Post::orderBy('views','desc')->paginate(5);
 		$user = User::all();
 		$topcategories = Category::orderBy('created_at','desc')->take(15)->get();

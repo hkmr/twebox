@@ -35,6 +35,7 @@
                     <div class="row">
                          <div class="col-md-12 col-sm-12">
                             <div class="single-blog blog-details two-column">
+                                <h2 class="post-title bold"><a href="{{ route('blog.single', $post->slug) }}"> {{ $post->title }} </a></h2>
                                 <div class="post-thumb">
                                     <a href="{{ route('blog.single', $post->slug) }}">
                                     @if($post->image == null)
@@ -50,9 +51,16 @@
                                     </div>
                                 </div>
                                 <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="{{ route('blog.single', $post->slug) }}"> {{ $post->title }} </a></h2>
+                                    
                                     <p>Read time: <span class="eta"></span></p>
-                                    <h3 class="post-author"><a href="{{ '/profile/'. $post->user_id }}">Posted by {{ $user->where('id',$post->user_id)->pluck('name')->first() }}</a></h3>
+                                    <h3 class="post-author">
+                                    {{-- <a href="{{ '/profile/'. $post->user_id }}">Posted by {{ $user->where('id',$post->user_id)->pluck('name')->first() }}</a> --}}
+                                    <a class="ui basic image label" href="{{ '/profile/'. $post->user_id }}">
+                                      <img src="/images/user-profile/1500779338.jpg">
+                                      Elliot
+                                    </a>
+
+                                    </h3>
                                     <div class="post-body">
                                     <article>
                                         <p>{!! $post->body !!}</p>
@@ -88,7 +96,7 @@
 
                                     </div>
 
-                            <div class="response-area" id="comments">
+                            {{-- <div class="response-area" id="comments">
                                     <h2 class="bold pageInfo">Comments :</h2>
 
                                     @if( Auth::check() )
@@ -157,8 +165,88 @@
                                         </li>
                                         @endforeach                                      
                                     </ul>                   
-                                	</div><!--/Response-area-->
+                                	</div> --}}<!--/Response-area-->
+                                    {{-- COMMENTS AREA --}}
+                                    <div class="ui comments">
+                                      <h3 class="ui dividing header">Comments</h3>
 
+                                      @foreach($post->comments as $comment)
+                                      <div class="comment">
+                                        <a class="avatar">
+                                          <img src="/images/avatar/small/matt.jpg">
+                                        </a>
+                                        <div class="content">
+                                          <a class="author" href="{{ '/profile/'. $comment->user_id }}">{{ $comment->name }}</a>
+                                          <div class="metadata">
+                                            <span class="date">{{ $comment->created_at->diffForHumans() }}</span>
+                                          </div>
+                                          <div class="text">
+                                            {{ $comment->comment }}
+                                          </div>
+                                        </div>
+                                      </div>
+                                      @endforeach
+                                      <hr>
+
+                                      {{-- <form class="ui reply form">
+                                        <div class="field">
+                                          <textarea></textarea>
+                                        </div>
+                                        <div class="ui blue labeled submit icon button">
+                                          <i class="icon edit"></i> Comment
+                                        </div>
+                                      </form> --}}
+
+                                      @if( Auth::check() )
+
+                                        <div class="row padding-bottom">
+                                            <div id="comment-form" class="col-md-8 col-md-offset-2 form-spacing-top">
+                                                {{ Form::open(['route' => ['comments.store', $post->id ], 'method' => 'POST']) }}
+
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-md-12">
+                                                            {{ Form::textarea('comment',null, ['class' => 'form-control', 'rows' => '3', 'placeholder' => 'Enter Your comment here..']) }}
+                                                            <br>
+                                                            {{ Form::submit('Comment', ['class' => 'ui primary button']) }}
+                                                        </div>
+                                                    </div>
+
+                                                {{ Form::close() }}
+                                            </div>
+                                        </div>
+
+                                    @else
+
+                                <div class="row padding-bottom">
+                                        <div id="comment-form" class="col-md-8 col-md-offset-2 form-spacing-top">
+                                            {{ Form::open(['route' => ['comments.store', $post->id ], 'method' => 'POST']) }}
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        {{ Form::label('name','Name:') }}
+                                                        {{ Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) }}
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        {{ Form::label('email', 'Email:') }}
+                                                        {{ Form::text('email', null, ['class' => 'form-control', 'required' => 'required']) }}
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        {{ Form::label('comment','Comment:') }}
+                                                        {{ Form::textarea('comment',null, ['class' => 'form-control', 'required' => 'required' , 'rows' => '5']) }}<br>
+
+                                                        {{ Form::submit('Comment', ['class' => 'ui primary button']) }}
+                                                    </div>
+                                                </div>
+
+                                            {{ Form::close() }}
+                                        </div>
+                                    </div>
+
+                                @endif
+                                    </div>
                                 	
                                 </div>
                             </div>

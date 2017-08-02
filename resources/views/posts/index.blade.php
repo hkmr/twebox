@@ -9,6 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-7">
+                <div class="infinite-scroll">
                     <div class="row">
 
                     	@foreach($posts as $post)
@@ -43,25 +44,22 @@
                             </div>
                         </div>
                         @endforeach
-
+                        {!! $posts->links() !!}
                     </div>
-                    <div class="blog-pagination">
-                        <ul class="pagination">
-                          {!! $posts->links(); !!}
-                        </ul>
-                    </div>
+                    
+                   </div>
                  </div>
                 <div class="col-md-3 col-sm-5">
                     <a href=" {{route('posts.create')}} " class="btn btn-submit">Create New Post</a><hr>
                     <div class="sidebar blog-sidebar">
                         <div class="sidebar-item  recent">
-                            <h3>Popular Posts</h3>
+                            <h3>Popular Stories</h3>
                             @foreach($populars as $post)
                             <div class="media">
                                 <div class="pull-left">
                                     <a href="{{ route('blog.single', $post->slug) }}">
                                     @if($post->image == null)
-                                    <img src=" {{ asset('images/blog/blog-default.jpg') }} " alt="default-image" height="52" width="52" />
+                                    
                                     @else
                                         <img src=" {{ asset('images/blog/'. $post->image) }} " alt="{{$post->name}}" height="52" width="52" />
                                     @endif

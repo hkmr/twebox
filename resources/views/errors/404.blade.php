@@ -6,6 +6,6 @@
 
 @section('content')
 
-<h2>Opps ! Your are lost ....</h2>
+<h2>This is error page.</h2>
 
 @endsection

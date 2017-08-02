@@ -5,6 +5,7 @@
 <meta name="author" content="twebox.com">
 <title> tweBox @yield('title') </title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/semantic.min.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/lightbox.css" rel="stylesheet"> 
 <link href="/css/animate.min.css" rel="stylesheet"> 
@@ -12,7 +13,7 @@
 <link href="/css/responsive.css" rel="stylesheet">
 <link href="/css/styles.css" rel="stylesheet">
 <link href="/css/notify.css" rel="stylesheet">
-<link href="/css/paradeiser.min.css" rel="stylesheet">
+<link href="/css/paradeiser.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono|Titillium+Web|Marvel|Economica|Josefin+Sans" rel="stylesheet">
 
 <!-- facebook meta tags -->

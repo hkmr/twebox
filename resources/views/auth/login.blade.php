@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 
-              <!-- <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+             {{--  <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -66,8 +66,8 @@
             </div>
         </div>
     </section>
- -->
 
+ --}}
 
             <div class="login-box">
                 <div class="lb-header">
@@ -89,6 +89,9 @@
                     <p>Google</p>
                   </a>
                 </div>
+                 <div class="ui horizontal divider">
+                    Or
+                  </div>
                 <!-- login form -->
                 <form class="email-login form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}

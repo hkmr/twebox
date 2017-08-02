@@ -37,21 +37,21 @@ return [
     
     // socialite providers...
     'facebook' => [
-        'client_id' => 'facebook_client_id',
-        'client_secret' => 'facebook_client_password',
-        'redirect' => 'http://localhost:8000/auth/facebook/callback',
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT'),
     ],
 
     'twitter' => [
-        'client_id' => 'twitter_client_id',
-        'client_secret' => 'twitter_client_password',
-        'redirect' => 'http://localhost:8000/auth/twitter/callback',
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT'),
     ],
 
     'google' => [
-        'client_id' => 'google_client_id',
-        'client_secret' => 'google_client_password',
-        'redirect' => 'http://localhost:8000/auth/google/callback',
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT'),
     ],
 
 ];
